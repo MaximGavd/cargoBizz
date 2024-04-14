@@ -1,8 +1,18 @@
 <?php
 
+
 require_once dirname(__DIR__ , 1) . '/vendor/autoload.php';
 
-use App\Containers\Container;
-use \App\Containers\Transport;
+use Core\Package;
+use Core\Calculator;
+use Core\Container;
 
-$smallContainer = new Container(new Transport(30 , 60 , 90 , 27));
+$transport1 = array(new Package(78 , 79 , 93 , 27) , new Package(78 , 79 , 93 , 1));
+
+
+$container10Ft = new Container(200 , 200 ,290);
+$container40Ft = new Container(200   , 200 ,1200);
+
+$calculator1 = Calculator::containersNeeded($container10Ft , $transport1);
+
+echo $calculator1;
